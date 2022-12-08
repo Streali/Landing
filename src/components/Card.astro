@@ -1,0 +1,28 @@
+---
+export interface Props {
+	title: string;
+	status: 'available' | 'soon';
+	image: string;
+	align: 'left' | 'center';
+}
+
+const { title, status, image, align } = Astro.props;
+---
+
+<div>
+	<section
+		class={`w-full h-48 rounded-xl border border-dark-300 bg-black/40 relative px-6 items-center flex ${
+			align === 'center' ? 'justify-center' : 'justify-start'
+		}`}
+	>
+		<span
+			class={`inline-flex items-center px-2 h-6 rounded-full capitalize font-bold text-sm absolute top-3 right-3 ${
+				status === 'available'
+					? 'bg-accent-500 text-dark-500'
+					: 'bg-primary-500 text-white'
+			}`}>{status}</span
+		>
+		<img src={image} alt={title} />
+	</section>
+	<h4 class='text-center mt-2 font-bold'>{title}</h4>
+</div>
