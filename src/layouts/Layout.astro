@@ -44,19 +44,11 @@ const { title, og, twitter } = Astro.props;
 	<body>
 		<slot />
 	</body>
-	<script>
-		window.axeptioSettings = {
-			clientId: '639210a668d45ed7517e0178',
-		};
-
-		(function (d, s) {
-			var t = d.getElementsByTagName(s)[0],
-				e = d.createElement(s);
-			e.async = true;
-			e.src = '//static.axept.io/sdk-slim.js';
-			t.parentNode.insertBefore(e, t);
-		})(document, 'script');
-	</script>
+	<script
+		defer
+		data-domain='streali.com'
+		src='https://plausible.io/js/script.js'
+	></script>
 </html>
 <style is:global>
 	html {
