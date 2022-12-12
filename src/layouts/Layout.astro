@@ -40,15 +40,15 @@ const { title, og, twitter } = Astro.props;
 		<meta name='twitter:card' content='summary_large_image' />
 		<meta name='twitter:site' content={twitter.site} />
 		<meta name='twitter:creator' content={twitter.creator} />
+		<script
+			defer
+			data-domain='streali.com'
+			src='https://plausible.io/js/script.js'
+		></script>
 	</head>
 	<body>
 		<slot />
 	</body>
-	<script
-		defer
-		data-domain='streali.com'
-		src='https://plausible.io/js/script.js'
-	></script>
 </html>
 <style is:global>
 	html {
