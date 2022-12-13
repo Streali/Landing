@@ -1,59 +1,62 @@
 ---
 export interface Props {
-	title: string;
-	og: {
-		title: string;
-		description: string;
-		image: string;
-		url: string;
-	};
-	twitter: {
-		site: string;
-		creator: string;
-	};
+  title: string;
+  og: {
+    title: string;
+    description: string;
+    image: string;
+    url: string;
+  };
+  twitter: {
+    site: string;
+    creator: string;
+  };
 }
 
 const { title, og, twitter } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='en'>
-	<head>
-		<meta charset='UTF-8' />
-		<meta name='viewport' content='width=device-width' />
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<link
-			rel='stylesheet'
-			href='https://api.fontshare.com/v2/css?f[]=satoshi@700,701,401,400,500,501&f[]=clash-display@700,500,600&display=swap'
-		/>
-		<link
-			rel='stylesheet'
-			href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'
-		/>
-		<meta name='generator' content={Astro.generator} />
-		<title>{title}</title>
-		<meta property='og:title' content={og.title} />
-		<meta property='og:type' content='website' />
-		<meta property='og:description' content={og.description} />
-		<meta property='og:image' content={og.image} />
-		<meta property='og:url' content={og.url} />
-		<meta name='twitter:card' content='summary_large_image' />
-		<meta name='twitter:site' content={twitter.site} />
-		<meta name='twitter:creator' content={twitter.creator} />
-		<script
-			defer
-			data-domain='streali.com'
-			src='https://plausible.io/js/script.js'
-		></script>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@700,701,401,400,500,501&f[]=clash-display@700,500,600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    />
+    <title>{title}</title>
+
+    <meta property="og:title" content={og.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={og.description} />
+    <meta property="og:image" content={og.image} />
+    <meta property="og:url" content={og.url} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twitter.site} />
+    <meta name="twitter:creator" content={twitter.creator} />
+    <meta name="twitter:title" content={og.title} />
+    <meta name="twitter:description" content={og.description} />
+
+    <script
+      defer
+      data-domain="streali.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	html {
-		font-family: theme('fontFamily.sans');
-		background-color: theme('colors.dark.500');
-		color: theme('colors.white');
-	}
+  html {
+    font-family: theme("fontFamily.sans");
+    background-color: theme("colors.dark.500");
+    color: theme("colors.white");
+  }
 </style>
